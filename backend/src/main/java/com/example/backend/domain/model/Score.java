@@ -16,8 +16,8 @@ import javax.validation.constraints.NotNull;
 public class Score {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Integer id;
 
     @NotNull

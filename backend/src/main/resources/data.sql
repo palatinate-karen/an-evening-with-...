@@ -13,3 +13,10 @@ INSERT INTO CITES_KANYE (ID, CITE) VALUES
                                        (4, 'Be yourself'),
                                        (5, 'Future is written in the presence'),
                                        (6, 'Trump and West unite');
+
+INSERT INTO SCORE (ID, NAME, COUNT) VALUES
+                      (1, 'Tim', 3),
+                      (2, 'Karen', 2),
+                      (3, 'Adrian', 2),
+                      (4, 'Sebastian', 1),
+                      (5, 'Gennaro', 0);
