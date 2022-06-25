@@ -7,12 +7,12 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class TrumpClient {
 
-    private final String url = "https://www.tronalddump.io/";
+    private static final String URL = "https://www.tronalddump.io/";
 
 
     public String getCiteFromApi() {
         WebClient webClient = WebClient.builder()
-                .baseUrl(url)
+                .baseUrl(URL)
                 .build();
 
         // FIXME fertigstellen, wenn Schnittstelle wieder online

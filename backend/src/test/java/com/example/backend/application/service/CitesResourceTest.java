@@ -1,19 +1,30 @@
 package com.example.backend.application.service;
 
+import com.example.backend.domain.service.CitesService;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class CitesResourceTest {
 
-    @Autowired
+    @Mock
+    CitesService citesService;
+
+    @InjectMocks
     CitesResource citesResource;
 
     @Test
     void getNextCiteTrump() {
-        assertNotNull(citesResource.getNextCite("Trump"));
+        String expected = "Perhaps I am a Trump cite.";
+        when(citesService.getCite("Trump")).thenReturn(expected);
+
+        String actual = citesResource.getNextCite("Trump");
+
+        assertEquals(expected, actual);
     }
 }

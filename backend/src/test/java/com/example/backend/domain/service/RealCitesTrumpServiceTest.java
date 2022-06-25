@@ -19,7 +19,7 @@ class RealCitesTrumpServiceTest {
     RealCitesTrumpService realCitesTrumpService;
 
     @Test
-    void getCite() {
+    void getCiteSuccessfully() {
         String expected = "I am a actual of Trump.";
         when(trumpClient.getCiteFromApi()).thenReturn(expected);
 

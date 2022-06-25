@@ -23,6 +23,7 @@ public class CitesService {
 
     @Autowired
     RealCitesKanyeService realCitesKanyeService;
+    private Random random;
 
     public String getCite(String celebrity) {
         boolean isFake = decideIfFakeCite();
@@ -40,26 +41,21 @@ public class CitesService {
     private RealCitesStrategy getRealCitesService(String celebrity) {
         if ("Trump".equals(celebrity)) {
             return realCitesTrumpService;
-        } else if ("Kanye".equals(celebrity)) {
-            return  realCitesKanyeService;
         } else {
-            //throw new Exception();
-            return null;
+            return  realCitesKanyeService;
         }
     }
 
     private FakeCitesStrategy getFakeCitesService(String celebrity) {
         if ("Trump".equals(celebrity)) {
             return fakeCitesTrumpService;
-        } else if ("Kanye".equals(celebrity)) {
-            return  fakeCitesKanyeService;
         } else {
-            //throw new Exception();
-            return null;
+            return  fakeCitesKanyeService;
         }
     }
 
     private boolean decideIfFakeCite() {
-        return new Random().nextBoolean();
+        random = new Random();
+        return random.nextBoolean();
     }
 }

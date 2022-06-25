@@ -19,7 +19,7 @@ class RealCitesKanyeServiceTest {
     RealCitesKanyeService realCitesKanyeService;
 
     @Test
-    void getsCite() {
+    void getsCiteSuccessfully() {
         String expected = "I am a actual of Kanye.";
         when(kanyeClient.getCiteFromApi()).thenReturn(expected);
 
