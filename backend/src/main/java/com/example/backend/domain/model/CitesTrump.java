@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor
 @Entity
-public class CitesTrump {
+public class CitesTrump implements Cite {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

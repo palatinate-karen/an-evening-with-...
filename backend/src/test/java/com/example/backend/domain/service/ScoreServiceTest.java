@@ -16,7 +16,7 @@ class ScoreServiceTest {
     ScoreService scoreService;
 
     @Test
-    void getTopFive() {
+    void getTopFiveSuccessfully() {
         List<Score> topFive = scoreService.getTopFive();
 
         assertEquals(5, topFive.size());
@@ -26,7 +26,7 @@ class ScoreServiceTest {
     }
 
     @Test
-    void getHighestScore() {
+    void getHighestScoreSuccessfully() {
         Score expected = Score.builder()
                 .id(1)
                 .name("Tim")
@@ -40,7 +40,7 @@ class ScoreServiceTest {
     }
 
     @Test
-    void saveScore() {
+    void saveScoreSuccessfully() {
         Score expected = Score.builder()
                 .name("Test")
                 .count(4)
