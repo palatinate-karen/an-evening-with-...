@@ -1,10 +1,12 @@
 package com.example.backend.application.service;
 
+import com.example.backend.application.model.NewScore;
 import com.example.backend.domain.model.Score;
 import com.example.backend.domain.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class ScoreResource {
     }
 
     @PostMapping(path = "saveScore")
-    public void saveNewScore(String name, int score){
-        scoreService.saveScore(name, score);
+    public void saveNewScore(@RequestBody NewScore newScore){
+        scoreService.saveScore(newScore.getName(), newScore.getScore());
     }
 }

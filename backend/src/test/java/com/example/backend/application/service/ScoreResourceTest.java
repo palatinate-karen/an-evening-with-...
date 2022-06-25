@@ -1,5 +1,6 @@
 package com.example.backend.application.service;
 
+import com.example.backend.application.model.NewScore;
 import com.example.backend.domain.model.Score;
 import com.example.backend.domain.service.ScoreService;
 import com.example.backend.infrastructure.service.ScoreRepository;
@@ -11,8 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 class ScoreResourceTest {
@@ -45,7 +47,7 @@ class ScoreResourceTest {
 
     @Test
     void saveNewScoreSuccessfully() {
-        scoreResourceWithMockedService.saveNewScore("Test", 10);
+        scoreResourceWithMockedService.saveNewScore(NewScore.builder().name("Test").score(10).build());
         verify(scoreService, times(1)).saveScore("Test", 10);
     }
 }

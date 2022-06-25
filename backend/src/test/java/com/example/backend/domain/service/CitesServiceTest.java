@@ -3,25 +3,26 @@ package com.example.backend.domain.service;
 import com.example.backend.infrastructure.service.KanyeClient;
 import com.example.backend.infrastructure.service.TrumpClient;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class CitesServiceTest {
 
-    @Mock
+    @MockBean
     TrumpClient trumpClient;
 
-    @Mock
+    @MockBean
     KanyeClient kanyeClient;
 
     @Autowired
-    @InjectMocks
     CitesService citesService;
 
     @Test
