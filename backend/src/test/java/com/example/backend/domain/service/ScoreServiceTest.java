@@ -43,10 +43,10 @@ class ScoreServiceTest {
     void saveScoreSuccessfully() {
         Score expected = Score.builder()
                 .name("Test")
-                .count(4)
+                .count(2)
                 .build();
 
-        Score actual = scoreService.saveScore("Test", 4);
+        Score actual = scoreService.saveScore("Test", 2);
 
         assertEquals(expected.getName(), actual.getName());
         assertEquals(expected.getCount(), actual.getCount());

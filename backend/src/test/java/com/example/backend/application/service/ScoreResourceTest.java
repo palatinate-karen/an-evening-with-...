@@ -20,11 +20,14 @@ class ScoreResourceTest {
     @Mock
     ScoreService scoreService;
 
+    @InjectMocks
+    ScoreResource scoreResourceWithMockedService;
+
+    @Autowired
+    ScoreResource scoreResource;
+
     @Autowired
     ScoreRepository scoreRepository;
-
-    @InjectMocks
-    ScoreResource scoreResource;
 
     @Test
     void getHighestScoreSuccessfully() {
@@ -42,7 +45,7 @@ class ScoreResourceTest {
 
     @Test
     void saveNewScoreSuccessfully() {
-        scoreResource.saveNewScore("Test", 10);
+        scoreResourceWithMockedService.saveNewScore("Test", 10);
         verify(scoreService, times(1)).saveScore("Test", 10);
     }
 }
