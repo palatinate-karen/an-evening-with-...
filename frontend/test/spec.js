@@ -1,8 +1,10 @@
-// spec.js
 describe('Protractor Demo App', function() {
-  it('should have a title', function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+  it('should load start page', function() {
+    browser.get('http://localhost:4200/');
 
-    expect(browser.getTitle()).toEqual('Super Calculator');
+    expect(browser.getTitle()).toEqual('An Evening With ...');
+    expect(element(by.id('inputName'))).toBeTruthy();
+    expect(element(by.id('kanyeStart')).getTitle()).toEqual('KanyePic');
+    expect(element(by.id('trumpStart')).getTitle()).toEqual('TrumpPic');
   });
 });
