@@ -1,7 +1,7 @@
 package com.example.backend.domain.service;
 
 import com.example.backend.domain.model.Score;
-import com.example.backend.infrastructure.ScoreRepository;
+import com.example.backend.infrastructure.service.ScoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

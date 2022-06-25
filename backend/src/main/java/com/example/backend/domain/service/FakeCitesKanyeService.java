@@ -1,7 +1,7 @@
 package com.example.backend.domain.service;
 
 import com.example.backend.domain.model.CitesKanye;
-import com.example.backend.infrastructure.CitesKanyeRepository;
+import com.example.backend.infrastructure.service.CitesKanyeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,12 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class CitesKanyeService implements CitesStrategy{
+public class FakeCitesKanyeService implements FakeCitesStrategy {
     @Autowired
     private final CitesKanyeRepository repository;
     private Random random;
 
-    public CitesKanyeService(CitesKanyeRepository repository) {
+    public FakeCitesKanyeService(CitesKanyeRepository repository) {
         this.repository = repository;
     }
 

@@ -1,6 +1,6 @@
 package com.example.backend.domain.service;
 
-import com.example.backend.infrastructure.CitesTrumpRepository;
+import com.example.backend.infrastructure.service.CitesTrumpRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,13 +17,13 @@ import static org.mockito.Mockito.when;
 class CitesTrumpServiceTest {
 
     @Autowired
-    CitesTrumpService trumpService;
+    FakeCitesTrumpService trumpService;
 
     @Mock
     CitesTrumpRepository trumpRepositoryMock;
 
     @InjectMocks
-    CitesTrumpService trumpServiceWithMock;
+    FakeCitesTrumpService trumpServiceWithMock;
 
     @Test
     void getsRandomCite() {

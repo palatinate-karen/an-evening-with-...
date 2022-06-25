@@ -1,6 +1,6 @@
 package com.example.backend.domain.service;
 
-import com.example.backend.infrastructure.CitesKanyeRepository;
+import com.example.backend.infrastructure.service.CitesKanyeRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,13 +17,13 @@ import static org.mockito.Mockito.when;
 class CitesKanyeServiceTest {
 
     @Autowired
-    CitesKanyeService kanyeService;
+    FakeCitesKanyeService kanyeService;
 
     @Mock
     CitesKanyeRepository kanyeRepositoryMock;
 
     @InjectMocks
-    CitesKanyeService kanyeServiceWithMock;
+    FakeCitesKanyeService kanyeServiceWithMock;
 
 
     @Test

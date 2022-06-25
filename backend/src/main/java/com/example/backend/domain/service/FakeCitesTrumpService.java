@@ -1,7 +1,7 @@
 package com.example.backend.domain.service;
 
 import com.example.backend.domain.model.CitesTrump;
-import com.example.backend.infrastructure.CitesTrumpRepository;
+import com.example.backend.infrastructure.service.CitesTrumpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +10,13 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class CitesTrumpService implements CitesStrategy {
+public class FakeCitesTrumpService implements FakeCitesStrategy {
 
     @Autowired
     private final CitesTrumpRepository repository;
     private Random random;
 
-    public CitesTrumpService(CitesTrumpRepository repository) {
+    public FakeCitesTrumpService(CitesTrumpRepository repository) {
         this.repository = repository;
     }
 

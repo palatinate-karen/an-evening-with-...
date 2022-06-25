@@ -1,4 +1,4 @@
-package com.example.backend.infrastructure;
+package com.example.backend.infrastructure.service;
 
 import com.example.backend.domain.model.Score;
 import org.springframework.data.jpa.repository.JpaRepository;
