@@ -26,6 +26,18 @@ export class HighscoreBoardComponent implements OnInit {
     this.saveHighscore();
   }
 
+  private saveHighscore() {
+    let name: string = sessionStorage.getItem('name') || '';
+    let newScore: ScoreImpl = new ScoreImpl(name, parseInt(this.score || '0'));
+
+    this.highscoreService.saveNewHighscore(newScore).then(v => {this.getTopFive()});
+  }
+
+  private getTopFive() {
+    this.highscoreService.getTopFive()
+      .subscribe(highscorers => this.highscorers = highscorers);
+  }
+
   restartGame(){
     sessionStorage.clear()
     this.router.navigateByUrl('start');

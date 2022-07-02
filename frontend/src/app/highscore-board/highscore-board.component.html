@@ -1,1 +1,9 @@
-<p>highscore-board works!</p>
+<p>Dein Score: {{score}}</p>
+<h4 id="titleRank">Und hier die Bestenliste</h4>
+<ol>
+  <li *ngFor="let highscorer of highscorers">{{highscorer.name}}: {{highscorer.count}}</li>
+</ol>
+<button title="RestartGame" id="reGame" type="button" (click)="restartGame()">Startseite
+</button>
+<button title="RestartRun" id="reRun" type="button" (click)="restartRun()">Erneut spielen?
+</button>
