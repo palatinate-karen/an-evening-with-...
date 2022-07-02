@@ -1,6 +1,6 @@
 package com.example.backend.infrastructure;
 
-import com.example.backend.infrastructure.service.TrumpClient;
+import com.example.backend.infrastructure.service.KanyeClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,14 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class TrumpClientIntegrationsTest {
+class KanyeClientIT {
 
     @Autowired
-    TrumpClient trumpClient;
+    KanyeClient kanyeClient;
 
     @Test
     void getsCiteSuccessfullyFromApi() {
-        String citeFromApi = trumpClient.getCiteFromApi();
+        String citeFromApi = kanyeClient.getCiteFromApi();
         System.out.println(citeFromApi);
         assertNotNull(citeFromApi);
     }

@@ -3,7 +3,7 @@ INSERT INTO CITES_TRUMP (ID, CITE) VALUES
                                        (2, 'Hillary can suck my toes'),
                                        (3, 'Why do so many children get AUTISM after the vaccine? Coincidence?!'),
                                        (4, 'The wall will make America great again #MAGA'),
-                                       (5, 'I am a successful businessman and President of the USA. I am better than all these haters'),
+                                       (5, 'I am a successful businessman and President of the US. I am better than all these haters'),
                                        (6, 'FAKE NEWS everywhere!'),
                                        (7, 'Abortion needs to be punished in a way. I dont know how yet'),
                                        (8, 'There is no global warming. I mean look outside, its snowing right now'),
