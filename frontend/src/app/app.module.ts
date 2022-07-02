@@ -7,6 +7,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { StartseiteComponent } from './startseite/startseite.component';
 import { SpielseiteComponent } from './spielseite/spielseite.component';
 import { HighscoreBoardComponent } from './highscore-board/highscore-board.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HighscoreBoardComponent } from './highscore-board/highscore-board.compo
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
