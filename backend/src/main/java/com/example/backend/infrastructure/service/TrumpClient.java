@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class TrumpClient {
 
-    private static final String URL = "https://www.tronalddump.io/";
+    private static final String URL = "https://www.tronalddump.io/random/quote";
 
 
     public String getCiteFromApi() {
@@ -15,13 +15,12 @@ public class TrumpClient {
                 .baseUrl(URL)
                 .build();
 
-        // FIXME fertigstellen, wenn Schnittstelle wieder online
         TrumpQuote quote = webClient
                 .get()
                 .retrieve()
                 .bodyToMono(TrumpQuote.class)
                 .block();
 
-        return quote.getQuote();
+        return quote.getValue();
     }
 }

@@ -6,6 +6,5 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class TrumpQuote {
-    // FIXME anpassen, wenn Schnittstelle wieder da
-    private String quote;
+    private String value;
 }
