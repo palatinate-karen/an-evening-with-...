@@ -18,7 +18,7 @@ export class SpielseiteComponent implements OnInit {
   highscore: number = 0;
   highscorer: string = '';
 
-  private celebrity: string = '';
+  celebrity: string = '';
 
   constructor(
     private highscoreService: HighscoreService,

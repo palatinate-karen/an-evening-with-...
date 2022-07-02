@@ -1,5 +1,8 @@
 <h3 xmlns="http://www.w3.org/1999/html">{{quote}}</h3>
 
+<img src="assets/pics/Trumppic.png" height ="80" width="100" *ngIf="celebrity === 'trump'">
+<img src="assets/pics/South-Park-gay-fish_2.webp" height ="80" width="100" *ngIf="celebrity === 'kanye'">
+<br>
 <button title="False" id="falseButton" type="button" (click)="getAnswer(false)">Bullshit
 </button>
 <button title="True" id="trueButton" type="button" (click)="getAnswer(true)">Yeees
