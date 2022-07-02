@@ -1,1 +1,17 @@
-<p>startseite works!</p>
+<p>
+  Let's see how good you know your favorite celeb.<br>
+  After entering your name and choosing one of the celebs you'll see a cite and need to decide whether it's real or fake.<br>
+  Good luck, mate! Won't be too easy.
+</p>
+<p>
+  <mat-form-field id="inputName" appearance="fill">
+    <mat-label>Enter your name</mat-label>
+    <input matInput placeholder="Name" [(ngModel)]="name">
+  </mat-form-field>
+</p>
+<button title="TrumpPic" id="trumpStart" type="button" (click)="onStartGame('trump')">
+  <img src="assets/pics/Trumppic.png" height ="80" width="100">Trump
+</button>
+<button title="KanyePic" id="kanyeStart" type="button" (click)="onStartGame('kanye')">
+  <img src="assets/pics/South-Park-gay-fish_2.webp" height ="80" width="100">Kanye
+</button>
