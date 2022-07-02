@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, of} from "rxjs";
 import {Score} from "./score";
+import {ScoreImpl} from "./scoreImpl";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class HighscoreService {
   private serverUrl = 'http://localhost:8080'
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders(
+      { 'Content-Type': 'application/json', 'Connection': 'keep-alive' })
   };
 
   constructor(private http: HttpClient) { }
@@ -20,6 +22,20 @@ export class HighscoreService {
     return this.http.get<Score>(this.serverUrl + '/highestScore')
       .pipe(
         catchError(this.handleError<Score>('getHighestScore'))
+      );
+  }
+
+  async saveNewHighscore(newScore: ScoreImpl): Promise<void> {
+    await this.http.post<void>(this.serverUrl + '/saveScore', newScore, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<void>('saveNewHighscore'))
+      ).toPromise();
+  }
+
+  getTopFive(): Observable<Score[]> {
+    return this.http.get<Score[]>(this.serverUrl + '/topFive')
+      .pipe(
+        catchError(this.handleError<Score[]>('getHighestScore'))
       );
   }
 

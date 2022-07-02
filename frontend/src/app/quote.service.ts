@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Score} from "./score";
 import {catchError, Observable, of} from "rxjs";
 import {Quote} from "./quote";
 

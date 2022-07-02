@@ -43,7 +43,7 @@ public class CitesService {
     }
 
     private RealCitesStrategy getRealCitesService(String celebrity) {
-        if ("Trump".equals(celebrity)) {
+        if ("trump".equals(celebrity)) {
             return realCitesTrumpService;
         } else {
             return  realCitesKanyeService;
@@ -51,7 +51,7 @@ public class CitesService {
     }
 
     private FakeCitesStrategy getFakeCitesService(String celebrity) {
-        if ("Trump".equals(celebrity)) {
+        if ("trump".equals(celebrity)) {
             return fakeCitesTrumpService;
         } else {
             return  fakeCitesKanyeService;

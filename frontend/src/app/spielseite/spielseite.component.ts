@@ -57,6 +57,7 @@ export class SpielseiteComponent implements OnInit {
       this.getQuote();
     } else {
       sessionStorage.setItem('score', String(this.score));
+      sessionStorage.setItem('celebrity', this.celebrity);
       this.router.navigateByUrl('highscore');
     }
   }

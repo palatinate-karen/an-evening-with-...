@@ -1,5 +1,5 @@
 export interface Score {
-  id: number;
+  id?: number;
   name: string;
   count: number;
 }

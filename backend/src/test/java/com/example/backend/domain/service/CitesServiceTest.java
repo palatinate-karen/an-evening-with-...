@@ -31,7 +31,7 @@ class CitesServiceTest {
         String expectedCite = "Perhaps I am a expectedCite of Trump.";
         when(trumpClient.getCiteFromApi()).thenReturn(expectedCite);
 
-        Quote actualCite = citesService.getQuote("Trump");
+        Quote actualCite = citesService.getQuote("trump");
 
         assertTrue(expectedCite.equals(actualCite.getCite()) || actualCite.getCite() != null);
     }
@@ -41,7 +41,7 @@ class CitesServiceTest {
         String expectedCite = "Perhaps I am a cite of Kanye.";
         when(kanyeClient.getCiteFromApi()).thenReturn(expectedCite);
 
-        Quote actualCite = citesService.getQuote("Kanye");
+        Quote actualCite = citesService.getQuote("kanye");
 
         assertTrue(expectedCite.equals(actualCite.getCite()) || actualCite.getCite() != null);
     }
