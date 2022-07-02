@@ -13,5 +13,23 @@ describe('Protractor Demo App', function() {
     element(by.id('trumpStart')).click();
 
     expect(element(by.id('quote'))).toBeTruthy();
+    expect(element(by.id('yScore'))).toContain("Your Score: ")
+    expect(element(by.id('hScore'))).toContain("Highest Score: ")
+  });
+  it('should show highscore page after wrong answer', function () {
+    var highScoreHeading = element(by.id('titleRank'));
+    expect(highScoreHeading).toBeFalsy();
+
+    var inGame = true;
+    while (inGame) {
+      element(by.id('falseButton')).click();
+      if (highScoreHeading.isDisplayed()) {
+        inGame = false;
+      }
+    }
+
+    expect(highScoreHeading).toBeTruthy();
+    expect(element(by.id('reGame'))).toBeTruthy();
+    expect(element(by.id('reRun'))).toBeTruthy();
   });
 });
