@@ -1,5 +1,6 @@
 package com.example.backend.application.service;
 
+import com.example.backend.domain.model.Quote;
 import com.example.backend.domain.service.CitesService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,10 +21,13 @@ class CitesResourceTest {
 
     @Test
     void getNextCiteTrump() {
-        String expected = "Perhaps I am a Trump cite.";
-        when(citesService.getCite("Trump")).thenReturn(expected);
+        Quote expected = Quote.builder()
+                .cite("Perhaps I am a Trump cite.")
+                .isReal(false)
+                .build();
+        when(citesService.getQuote("Trump")).thenReturn(expected);
 
-        String actual = citesResource.getNextCite("Trump");
+        Quote actual = citesResource.getNextCite("Trump");
 
         assertEquals(expected, actual);
     }

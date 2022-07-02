@@ -1,1 +1,11 @@
-<p>spielseite works!</p>
+<h3 xmlns="http://www.w3.org/1999/html">{{quote}}</h3>
+
+<button title="False" id="falseButton" type="button" (click)="getAnswer(false)">Bullshit
+</button>
+<button title="True" id="trueButton" type="button" (click)="getAnswer(true)">Yeees
+</button>
+
+<footer>
+  <b id="yScore">Your Score: {{score}}</b><br>
+  <b id="hScore">Highest Score: {{highscore}} by {{highscorer}}</b>
+</footer>

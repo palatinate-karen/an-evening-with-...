@@ -17,7 +17,7 @@ export class StartseiteComponent implements OnInit {
 
   onStartGame(celebrity: string) : void {
     // save name in browser
-    localStorage.setItem('name', this.name);
+    sessionStorage.setItem('name', this.name);
 
     // redirect to Spielseite
     this.router.navigateByUrl('play/' + celebrity);

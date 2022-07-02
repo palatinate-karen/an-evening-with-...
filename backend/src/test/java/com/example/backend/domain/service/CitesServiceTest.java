@@ -1,5 +1,6 @@
 package com.example.backend.domain.service;
 
+import com.example.backend.domain.model.Quote;
 import com.example.backend.infrastructure.service.KanyeClient;
 import com.example.backend.infrastructure.service.TrumpClient;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -27,13 +28,21 @@ class CitesServiceTest {
 
     @Test
     void getAnyTrumpCiteSuccessfully() {
-        when(trumpClient.getCiteFromApi()).thenReturn("Perhaps I am a cite of Trump.");
-        assertNotNull(citesService.getCite("Trump"));
+        String expectedCite = "Perhaps I am a expectedCite of Trump.";
+        when(trumpClient.getCiteFromApi()).thenReturn(expectedCite);
+
+        Quote actualCite = citesService.getQuote("Trump");
+
+        assertTrue(expectedCite.equals(actualCite.getCite()) || actualCite.getCite() != null);
     }
 
     @Test
     void getAnyKanyeCiteSuccessfully() {
-        when(kanyeClient.getCiteFromApi()).thenReturn("Perhaps I am a cite of Kanye.");
-        assertNotNull(citesService.getCite("Kanye"));
+        String expectedCite = "Perhaps I am a cite of Kanye.";
+        when(kanyeClient.getCiteFromApi()).thenReturn(expectedCite);
+
+        Quote actualCite = citesService.getQuote("Kanye");
+
+        assertTrue(expectedCite.equals(actualCite.getCite()) || actualCite.getCite() != null);
     }
 }

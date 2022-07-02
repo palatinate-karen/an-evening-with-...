@@ -1,5 +1,6 @@
 package com.example.backend.domain.service;
 
+import com.example.backend.domain.model.Quote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class CitesService {
     RealCitesKanyeService realCitesKanyeService;
     private Random random;
 
-    public String getCite(String celebrity) {
+    public Quote getQuote(String celebrity) {
         boolean isFake = decideIfFakeCite();
 
         String newCite;
@@ -35,7 +36,10 @@ public class CitesService {
             newCite = getRealCitesService(celebrity).getCite();
         }
 
-        return newCite;
+        return Quote.builder()
+                .cite(newCite)
+                .isReal(!isFake)
+                .build();
     }
 
     private RealCitesStrategy getRealCitesService(String celebrity) {
